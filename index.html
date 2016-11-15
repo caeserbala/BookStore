@@ -1,0 +1,29 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+     <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+ 
+    <script type="text/javascript" src="app1.js" ></script>
+     <script type="text/javascript" src="factory/appfact.js" ></script>
+    
+    
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myctrl">
+       
+         
+<div ng-repeat =" x in result"> 
+   <div ng-hide ={{x.notAvailable}} >
+<h1> {{x.title}}   
+   <p style="float:right; font-size: 20px;" >{{x.price | currency:"&#8360"}}</p>
+     </h1> 
+       <p > {{x.author}}</p>
+   <img ng-src='{{x.img_url}}' style="width:200px ; height:200px" /> <button name="addtocart" ng-hide={{x.soldout}}>addtocart</button>
+
+<span> </span>
+</div>
+</div>
+    </div>
+</body>
+</html>
